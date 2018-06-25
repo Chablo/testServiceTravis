@@ -24,30 +24,11 @@ public class GenericResource {
 
     @Context
     private UriInfo context;
-
-    /**
-     * Creates a new instance of GenericResource
-     */
-    public GenericResource() {
-    }
-
-    /**
-     * Retrieves representation of an instance of com.javaservices.testservicetravis.GenericResource
-     * @return an instance of java.lang.String
-     */
+    
+    @Path("hello")
     @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public String getXml() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * PUT method for updating or creating an instance of GenericResource
-     * @param content representation for the resource
-     */
-    @PUT
-    @Consumes(MediaType.APPLICATION_XML)
-    public void putXml(String content) {
+    @Produces({MediaType.APPLICATION_JSON})
+    public String sayHello(){   
+        return "{\"name\": \"John\"}";
     }
 }
